@@ -29,6 +29,10 @@ public class Program
                 case 4:
                 // TODO: exit program
                     break;
+
+                default:
+                    Console.WriteLine("This option does not exist in the menu!");
+                    break;
             }
     }
 }
