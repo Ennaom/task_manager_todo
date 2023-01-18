@@ -3,3 +3,6 @@ Manage list of tasks for todo
 
 ## dependencies
 empty
+
+## description
+short description
