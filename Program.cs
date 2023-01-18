@@ -11,28 +11,37 @@ public class Program
     static void Menu()
     {
         start:
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
+            try
             {
-                case 1:
-                // TODO: add task
-                    break;
+                int choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                    // TODO: add task
+                        break;
 
-                case 2:
-                // TODO: edit task
-                    break;
+                    case 2:
+                    // TODO: edit task
+                        break;
 
-                case 3:
-                // TODO: delete task
-                    break;
-                
-                case 4:
-                // TODO: exit program
-                    break;
+                    case 3:
+                    // TODO: delete task
+                        break;
+                    
+                    case 4:
+                    // TODO: exit program
+                        break;
 
-                default:
-                    Console.WriteLine("This option does not exist in the menu!");
-                    break;
+                    default:
+                        Console.WriteLine("This option does not exist in the menu!");
+                        break;
+                }
+            }
+
+            catch (FormatException)
+            {
+                Console.Write("Please enter number: ");
+                goto start;
             }
     }
 }
