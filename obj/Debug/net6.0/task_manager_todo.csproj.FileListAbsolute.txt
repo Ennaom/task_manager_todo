@@ -1,0 +1,15 @@
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\bin\Debug\net6.0\task_manager_todo.exe
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\bin\Debug\net6.0\task_manager_todo.deps.json
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\bin\Debug\net6.0\task_manager_todo.runtimeconfig.json
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\bin\Debug\net6.0\task_manager_todo.dll
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\bin\Debug\net6.0\task_manager_todo.pdb
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.csproj.AssemblyReference.cache
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.AssemblyInfoInputs.cache
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.AssemblyInfo.cs
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.csproj.CoreCompileInputs.cache
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.dll
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\refint\task_manager_todo.dll
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.pdb
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\task_manager_todo.genruntimeconfig.cache
+C:\Users\Marta\OneDrive\Dokumenty\C#\todo\task_manager_todo\obj\Debug\net6.0\ref\task_manager_todo.dll
