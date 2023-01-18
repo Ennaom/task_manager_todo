@@ -29,7 +29,7 @@ public class Program
                         break;
                     
                     case 4:
-                    // TODO: exit program
+                        Environment.Exit(0);
                         break;
 
                     default:
