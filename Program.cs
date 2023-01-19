@@ -2,22 +2,25 @@
 
 public class Program
 {
+    static List<string> tasks = new List<string>();
+
     static void Main()
     {
-        Console.WriteLine("1. Add Task\n2. Edit Task\n3. Delete Task\n4. Exit Program");
-        Menu();
+        Update();
     }
 
     static void Menu()
     {
+        // Handle menu functionality
         start:
             try
             {
+                Console.Write("Option: ");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
-                    // TODO: add task
+                        AddTask();
                         break;
 
                     case 2:
@@ -43,5 +46,45 @@ public class Program
                 Console.Write("Please enter number: ");
                 goto start;
             }
+    }
+
+    static void ListTasks()
+    {
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("No tasks available.");
+        }
+
+        else
+        {
+            foreach (string item in tasks)
+            {
+                Console.WriteLine(tasks.IndexOf(item)+1 + ". " + item.ToUpper());
+            }
+        }
+    }
+
+    static void AddTask()
+    {
+        Console.Write("Task name: ");
+        tasks.Add(Console.ReadLine());
+        Update();
+    }
+
+    static void ListMenu()
+    {
+        // List menu options
+        Console.WriteLine();
+        Console.WriteLine("--------MENU--------");
+        Console.WriteLine("1. Add Task\n2. Edit Task\n3. Delete Task\n4. Exit Program");
+        Menu();
+    }
+
+    static void Update()
+    {
+        Console.Clear();
+        Console.WriteLine("Your current tasks: ");
+        ListTasks();
+        ListMenu();
     }
 }
