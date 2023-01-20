@@ -19,6 +19,10 @@ public class Program
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
+                    case 0:
+                        Update();
+                        break;
+
                     case 1:
                         AddTask();
                         break;
@@ -28,7 +32,7 @@ public class Program
                         break;
 
                     case 3:
-                    // TODO: delete task
+                        DeleteTask();
                         break;
                     
                     case 4:
@@ -67,7 +71,12 @@ public class Program
     static void AddTask()
     {
         Console.Write("Task name: ");
-        tasks.Add(Console.ReadLine());
+        string x = Console.ReadLine();
+
+        if (x != "0")
+        {
+            tasks.Add(x);
+        }
         Update();
     }
 
@@ -76,7 +85,7 @@ public class Program
         // List menu options
         Console.WriteLine();
         Console.WriteLine("--------MENU--------");
-        Console.WriteLine("1. Add Task\n2. Edit Task\n3. Delete Task\n4. Exit Program");
+        Console.WriteLine("0. Go back to menu\n1. Add Task\n2. Edit Task\n3. Delete Task\n4. Exit Program");
         Menu();
     }
 
@@ -98,16 +107,24 @@ public class Program
                     Console.Write("Choose task to edit: ");
                     int i = int.Parse(Console.ReadLine());
 
-                    if (i<=tasks.Count && i>0)
+                    if (i != 0)
                     {
-                        Console.Write("Task's new name: ");
-                        tasks[i-1] = Console.ReadLine();
+                        if (i<=tasks.Count && i>0)
+                        {
+                            Console.Write("Task's new name: ");
+                            tasks[i-1] = Console.ReadLine();
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Invalid range!");
+                            goto start;
+                        }
                     }
 
                     else
                     {
-                        Console.WriteLine("Invalid range!");
-                        goto start;
+                        Update();
                     }
                 }
 
@@ -121,6 +138,52 @@ public class Program
         else
         {
             Console.WriteLine("There is no task to edit.");
+            System.Threading.Thread.Sleep(1000);
+        }
+        Update();
+    }
+
+    static void DeleteTask()
+    {
+        if (tasks.Count>0)
+        {
+            start:
+                try
+                {
+                    Console.Write("Choose task to delete: ");
+                    int i = int.Parse(Console.ReadLine());
+
+                    if (i != 0)
+                    {
+                        if (i<=tasks.Count && i>0)
+                        {
+                            tasks.RemoveAt(i-1);
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Invalid range!");
+                            goto start;
+                        }
+                    }
+
+                    else
+                    {
+                        Update();
+                    }
+                }
+
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter number!");
+                    goto start;
+                }
+        }
+
+        else
+        {
+            Console.WriteLine("There is no task to edit");
+            System.Threading.Thread.Sleep(1000);
         }
         Update();
     }
