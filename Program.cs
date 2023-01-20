@@ -24,7 +24,7 @@ public class Program
                         break;
 
                     case 2:
-                    // TODO: edit task
+                        EditTask();
                         break;
 
                     case 3:
@@ -86,5 +86,42 @@ public class Program
         Console.WriteLine("Your current tasks: ");
         ListTasks();
         ListMenu();
+    }
+
+    static void EditTask()
+    {
+        if (tasks.Count>0)
+        {
+            start:
+                try
+                {
+                    Console.Write("Choose task to edit: ");
+                    int i = int.Parse(Console.ReadLine());
+
+                    if (i<=tasks.Count && i>0)
+                    {
+                        Console.Write("Task's new name: ");
+                        tasks[i-1] = Console.ReadLine();
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Invalid range!");
+                        goto start;
+                    }
+                }
+
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter number!");
+                    goto start;
+                }
+        }
+
+        else
+        {
+            Console.WriteLine("There is no task to edit.");
+        }
+        Update();
     }
 }
