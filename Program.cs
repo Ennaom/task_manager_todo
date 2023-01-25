@@ -3,9 +3,25 @@
 public class Program
 {
     static List<string> tasks = new List<string>();
+    static string filename;
 
     static void Main()
     {
+        // handle the database (txt file based)
+        Console.Write("Your name: ");
+        string name = Console.ReadLine().ToUpper();
+        filename = "profiles\\" + name + ".txt";
+        if (File.Exists(filename))
+        {
+            using (var sr = new StreamReader(filename))
+            {
+                while (!sr.EndOfStream)
+                {
+                    tasks.Add(sr.ReadLine());
+                }
+            }
+        }
+
         Update();
     }
 
@@ -36,7 +52,7 @@ public class Program
                         break;
                     
                     case 4:
-                        Environment.Exit(0);
+                        ExitProgram();
                         break;
 
                     default:
@@ -186,5 +202,24 @@ public class Program
             System.Threading.Thread.Sleep(1000);
         }
         Update();
+    }
+
+    static void ExitProgram()
+    {
+        Console.Write("Do you want to save your file? (Y/N): ");
+        string answer = Console.ReadLine().ToUpper();
+        if (answer == "Y")
+        {
+            using (var sw = new StreamWriter(filename)) 
+            {
+                foreach (var item in tasks)
+                {
+                    sw.WriteLine(item);
+                }
+            }
+
+            Console.WriteLine("Data written succesfully!");
+        }
+        Environment.Exit(0);
     }
 }
